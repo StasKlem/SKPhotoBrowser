@@ -76,7 +76,7 @@ open class SKPhoto: NSObject, SKPhotoProtocol {
             defer { session.finishTasksAndInvalidate() }
             
             guard error == nil else {
-                self.loadUnderlyingImageComplete()
+                self.handleError(error)
                 return
             }
             
@@ -111,6 +111,22 @@ open class SKPhoto: NSObject, SKPhotoProtocol {
                 self.underlyingImage = image
             }
             NotificationCenter.default.post(name: Notification.Name(rawValue: SKPHOTO_LOADING_DID_END_NOTIFICATION), object: self)
+        }
+    }
+    
+    private func handleError(_ maybeError: Error?) {
+        guard let error = maybeError else {
+            self.loadUnderlyingImageComplete()
+            return
+        }
+        let nsError = error as NSError
+        switch nsError.code {
+        case NSURLErrorNetworkConnectionLost,
+             NSURLErrorNotConnectedToInternet,
+             NSURLErrorCannotFindHost:
+            self.loadUnderlyingImageAndNotify()
+        default:
+            self.loadUnderlyingImageComplete()
         }
     }
     
