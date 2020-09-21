@@ -112,7 +112,6 @@ class SKActionView: UIView {
     @objc func menuButtonPressed(_ sender: UIButton) {
         guard let browser = self.browser else { return }
         browser.delegate?.menuButtonDidTocuh?(browser)
-        
     }
 }
 

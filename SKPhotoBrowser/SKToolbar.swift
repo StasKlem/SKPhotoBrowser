@@ -80,27 +80,26 @@ private extension SKToolbar {
         let likeItem = self.getSkSelectButton(of: .like,
                                               selector: #selector(likeButtonPressed(_:)))
         
-        let offlineItem = self.getSkSelectButton(of: .offline,
-                                                 selector: #selector(self.offlineButtonPressed(_:)))
-        
         let deleteItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_delete_wh",
                                             selector: #selector(deleteButtonPressed(_:)))
+        
+        let menuItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/bt_common_menu_wh",
+                                          selector: #selector(menuButtonPressed(_:)))
         
         items.append(contentsOf: [toolActionButton,
                                   UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
                                   UIBarButtonItem(customView: likeItem),
                                   UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-                                  UIBarButtonItem(customView: offlineItem),
+                                  deleteItem,
                                   UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-                                  deleteItem])
+                                  menuItem])
         
         self.setItems(items, animated: false)
-        
     }
     
-    @objc func offlineButtonPressed(_ sender: SKOfflineButton) {
+    @objc func menuButtonPressed(_ sender: UIButton) {
         guard let browser = self.browser else { return }
-        browser.delegate?.addItemToOffline?(browser, index: browser.currentPageIndex, sender: sender)
+        browser.delegate?.menuButtonDidTocuh?(browser)
     }
     
     @objc func likeButtonPressed(_ sender: SKLikeButton) {
