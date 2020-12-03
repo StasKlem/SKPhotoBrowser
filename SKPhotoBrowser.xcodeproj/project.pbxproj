@@ -30,7 +30,7 @@
 		8909B5431BC791510060A053 /* SKCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B53B1BC791510060A053 /* SKCaptionView.swift */; };
 		8909B5441BC791510060A053 /* SKDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B53C1BC791510060A053 /* SKDetectingImageView.swift */; };
 		8909B5451BC791510060A053 /* SKDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B53D1BC791510060A053 /* SKDetectingView.swift */; };
-		8909B5461BC791510060A053 /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B53E1BC791510060A053 /* SKIndicatorView.swift */; };
+		8909B5461BC791510060A053 /* SKIndicatorViewDepricated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B53E1BC791510060A053 /* SKIndicatorViewDepricated.swift */; };
 		8909B5471BC791510060A053 /* SKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B53F1BC791510060A053 /* SKPhoto.swift */; };
 		8909B5491BC791510060A053 /* SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B5411BC791510060A053 /* SKPhotoBrowser.swift */; };
 		8909B54A1BC791510060A053 /* SKZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909B5421BC791510060A053 /* SKZoomingScrollView.swift */; };
@@ -41,6 +41,7 @@
 		89D0BA471D5994A8002A811B /* SKAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0BA461D5994A8002A811B /* SKAnimator.swift */; };
 		89D0BA491D59966B002A811B /* SKMesurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0BA481D59966B002A811B /* SKMesurement.swift */; };
 		8CA6C6521CBE76E80054D3C2 /* SKLocalPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6C6511CBE76E80054D3C2 /* SKLocalPhoto.swift */; };
+		8E511CB92578AF860020E72A /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E511CB82578AF860020E72A /* SKIndicatorView.swift */; };
 		A64B89361CB04222000071B9 /* SKPhotoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64B89351CB04222000071B9 /* SKPhotoBrowserTests.swift */; };
 		A64B89381CB04222000071B9 /* SKPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8909B5301BC791280060A053 /* SKPhotoBrowser.framework */; };
 		D2265CCF1F799C75009256CC /* UIApplication+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2265CCE1F799C75009256CC /* UIApplication+UIWindow.swift */; };
@@ -82,7 +83,7 @@
 		8909B53B1BC791510060A053 /* SKCaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCaptionView.swift; sourceTree = "<group>"; };
 		8909B53C1BC791510060A053 /* SKDetectingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDetectingImageView.swift; sourceTree = "<group>"; };
 		8909B53D1BC791510060A053 /* SKDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDetectingView.swift; sourceTree = "<group>"; };
-		8909B53E1BC791510060A053 /* SKIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKIndicatorView.swift; sourceTree = "<group>"; };
+		8909B53E1BC791510060A053 /* SKIndicatorViewDepricated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKIndicatorViewDepricated.swift; sourceTree = "<group>"; };
 		8909B53F1BC791510060A053 /* SKPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhoto.swift; sourceTree = "<group>"; };
 		8909B5411BC791510060A053 /* SKPhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowser.swift; sourceTree = "<group>"; };
 		8909B5421BC791510060A053 /* SKZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKZoomingScrollView.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		89D0BA461D5994A8002A811B /* SKAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAnimator.swift; sourceTree = "<group>"; };
 		89D0BA481D59966B002A811B /* SKMesurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMesurement.swift; sourceTree = "<group>"; };
 		8CA6C6511CBE76E80054D3C2 /* SKLocalPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLocalPhoto.swift; sourceTree = "<group>"; };
+		8E511CB82578AF860020E72A /* SKIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKIndicatorView.swift; sourceTree = "<group>"; };
 		A64B89331CB04222000071B9 /* SKPhotoBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKPhotoBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64B89351CB04222000071B9 /* SKPhotoBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserTests.swift; sourceTree = "<group>"; };
 		A64B89371CB04222000071B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,8 +177,9 @@
 				26C97AD81D0EB8BB0039F6CB /* SKCacheable.swift */,
 				8909B53B1BC791510060A053 /* SKCaptionView.swift */,
 				8909B53C1BC791510060A053 /* SKDetectingImageView.swift */,
+				8E511CB82578AF860020E72A /* SKIndicatorView.swift */,
 				8909B53D1BC791510060A053 /* SKDetectingView.swift */,
-				8909B53E1BC791510060A053 /* SKIndicatorView.swift */,
+				8909B53E1BC791510060A053 /* SKIndicatorViewDepricated.swift */,
 				8CA6C6511CBE76E80054D3C2 /* SKLocalPhoto.swift */,
 				89D0BA481D59966B002A811B /* SKMesurement.swift */,
 				7643F4B51FE9F42F00475F6E /* SKPaginationView.swift */,
@@ -357,7 +360,8 @@
 				D2265CCF1F799C75009256CC /* UIApplication+UIWindow.swift in Sources */,
 				89D0BA491D59966B002A811B /* SKMesurement.swift in Sources */,
 				8909B5471BC791510060A053 /* SKPhoto.swift in Sources */,
-				8909B5461BC791510060A053 /* SKIndicatorView.swift in Sources */,
+				8909B5461BC791510060A053 /* SKIndicatorViewDepricated.swift in Sources */,
+				797A9EBA244DBB3500650AE5 /* PlayerView.swift in Sources */,
 				7922C33D22BA9A8000C01AD2 /* SKPresentableViewType.swift in Sources */,
 				8917B1B41D5A14B0000CE1C4 /* SKButtons.swift in Sources */,
 				89C24A821D657AD1005F09A9 /* SKPhotoBrowserOptions.swift in Sources */,
@@ -367,7 +371,7 @@
 				8909B5491BC791510060A053 /* SKPhotoBrowser.swift in Sources */,
 				8909B5451BC791510060A053 /* SKDetectingView.swift in Sources */,
 				0D21DAF322AA3FC3009EBA09 /* Array+SKPhotoBrowser.swift in Sources */,
-				7922C34122BA9AAA00C01AD2 /* SKVideoPlayerView.swift in Sources */,
+				8E511CB92578AF860020E72A /* SKIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
