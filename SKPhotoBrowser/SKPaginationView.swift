@@ -14,7 +14,7 @@ class SKPaginationView: UIView {
     var counterLabel: UILabel?
     var prevButton: UIButton?
     var nextButton: UIButton?
-    private var margin: CGFloat = 100
+    private var margin: CGFloat = 110
     private var extraMargin: CGFloat = SKMesurement.isPhoneX ? 40 : 0
     
     fileprivate weak var browser: SKPhotoBrowser?
