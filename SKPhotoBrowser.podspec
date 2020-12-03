@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = "SKPhotoBrowser"
-  s.version             = "6.3.5"
+  s.version             = "6.3.6"
   s.summary             = "Simple PhotoBrowser/Viewer iwritten by pure swift. inspired by facebook, twitter photo browsers."
   s.homepage            = "https://github.com/suzuki-0000/SKPhotoBrowser"
   s.license             = { :type => "MIT", :file => "LICENSE" }
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.platform            = :ios, "11.0"
   s.source_files        = "SKPhotoBrowser/**/*.{h,swift,xib,png}"
   s.resources           = "SKPhotoBrowser/SKPhotoBrowser.bundle"
- 
+
   s.requires_arc        = true
   s.frameworks          = "UIKit"
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
