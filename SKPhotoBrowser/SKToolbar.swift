@@ -27,6 +27,12 @@ class SKToolbar: UIToolbar {
         }
     }
     
+    open var state = SKPhotoBrowserState.normal {
+        didSet {
+            setupToolbar()
+        }
+    }
+    
     var toolActionButton: UIBarButtonItem!
     
     fileprivate weak var browser: SKPhotoBrowser?
@@ -74,25 +80,50 @@ private extension SKToolbar {
     func setupToolbar() {
         var items = [UIBarButtonItem]()
         
-        self.toolActionButton = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_action_wh",
-                                                   selector: #selector(actionButtonPressed))
+        switch state {
+        case .normal:
+            self.toolActionButton = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_action_wh",
+                                                       selector: #selector(actionButtonPressed))
+            
+            let likeItem = self.getSkSelectButton(of: .like,
+                                                  selector: #selector(likeButtonPressed(_:)))
+            
+            let deleteItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_delete_wh",
+                                                selector: #selector(deleteButtonPressed(_:)))
+            
+            let menuItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/bt_common_menu_wh",
+                                              selector: #selector(menuButtonPressed(_:)))
+            
+            items.append(contentsOf: [toolActionButton,
+                                      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+                                      UIBarButtonItem(customView: likeItem),
+                                      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+                                      deleteItem,
+                                      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+                                      menuItem])
+        case .file:
+            self.toolActionButton = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_action_wh",
+                                                       selector: #selector(actionButtonPressed))
+            
+            let saveItem = barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_save",
+                                         selector: #selector(saveButtonPressed(_:)))
+            
+            let deleteItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_delete_wh",
+                                                selector: #selector(deleteButtonPressed(_:)))
+            
+            let menuItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/bt_common_menu_wh",
+                                              selector: #selector(menuButtonPressed(_:)))
+            
+            items.append(contentsOf: [toolActionButton,
+                                      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+                                      saveItem,
+                                      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+                                      deleteItem,
+                                      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+                                      menuItem])
+        }
         
-        let likeItem = self.getSkSelectButton(of: .like,
-                                              selector: #selector(likeButtonPressed(_:)))
-        
-        let deleteItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_delete_wh",
-                                            selector: #selector(deleteButtonPressed(_:)))
-        
-        let menuItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/bt_common_menu_wh",
-                                          selector: #selector(menuButtonPressed(_:)))
-        
-        items.append(contentsOf: [toolActionButton,
-                                  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-                                  UIBarButtonItem(customView: likeItem),
-                                  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-                                  deleteItem,
-                                  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-                                  menuItem])
+
         
         self.setItems(items, animated: false)
     }
@@ -117,6 +148,11 @@ private extension SKToolbar {
     @objc func actionButtonPressed(_ sender: UIButton) {
         guard let browser = self.browser else { return }
         browser.delegate?.shareMedia?(browser)
+    }
+    
+    @objc func saveButtonPressed(_ sender: UIButton) {
+        guard let browser = self.browser else { return }
+        browser.delegate?.saveMedia?(browser)
     }
     
     private func barBattonItem(imageName: String, selector: Selector) -> UIBarButtonItem {

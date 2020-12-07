@@ -93,6 +93,12 @@ import Foundation
      */
     @objc optional func shareMedia(_ browser: SKPhotoBrowser)
     
+
+    
+    /// Tells the delegate the user want to save media
+    /// - Parameter browser: reference to the calling SKPhotoBrowser
+    @objc optional func saveMedia(_ browser: SKPhotoBrowser)
+    
     /**
      Asks the delegate for the view for a certain photo. Needed to detemine the animation when presenting/closing the browser.
      

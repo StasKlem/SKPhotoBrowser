@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum SKPhotoBrowserState {
+    case normal
+    case file
+}
+
 public let SKPHOTO_LOADING_DID_END_NOTIFICATION = "photoLoadingDidEndNotification"
 
 // MARK: - SKPhotoBrowser
@@ -16,6 +21,13 @@ open class SKPhotoBrowser: UIViewController {
     open var currentPageIndex: Int = 0 {
         didSet {
             self.setupToolBarButtoms()
+        }
+    }
+    open var state = SKPhotoBrowserState.normal {
+        didSet {
+            if toolbar != nil {
+                toolbar.state = state
+            }
         }
     }
     open var initPageIndex: Int = 0
@@ -591,6 +603,7 @@ private extension SKPhotoBrowser {
     
     func configureToolbar() {
         toolbar = SKToolbar(frame: frameForToolbarAtOrientation(), browser: self)
+        toolbar.state = state
         view.addSubview(toolbar)
     }
 
