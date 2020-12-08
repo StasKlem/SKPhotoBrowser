@@ -99,6 +99,9 @@ import Foundation
     /// - Parameter browser: reference to the calling SKPhotoBrowser
     @objc optional func saveMedia(_ browser: SKPhotoBrowser)
     
+    @objc optional func moveMedia(_ browser: SKPhotoBrowser)
+    
+    @objc optional func accessMedia(_ browser: SKPhotoBrowser)
     /**
      Asks the delegate for the view for a certain photo. Needed to detemine the animation when presenting/closing the browser.
      

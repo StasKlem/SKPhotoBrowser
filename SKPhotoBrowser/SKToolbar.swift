@@ -105,22 +105,22 @@ private extension SKToolbar {
             self.toolActionButton = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_action_wh",
                                                        selector: #selector(actionButtonPressed))
             
-            let saveItem = barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_save",
-                                         selector: #selector(saveButtonPressed(_:)))
+            let moveItem = barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_move_media",
+                                         selector: #selector(moveMediaPressed(_:)))
             
             let deleteItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_delete_wh",
                                                 selector: #selector(deleteButtonPressed(_:)))
             
-            let menuItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/bt_common_menu_wh",
-                                              selector: #selector(menuButtonPressed(_:)))
+            let accessItem = self.barBattonItem(imageName: "SKPhotoBrowser.bundle/images/btn_common_access",
+                                              selector: #selector(accessButtonPressed(_:)))
             
             items.append(contentsOf: [toolActionButton,
                                       UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-                                      saveItem,
+                                      moveItem,
                                       UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
                                       deleteItem,
                                       UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-                                      menuItem])
+                                      accessItem])
         }
         
 
@@ -153,6 +153,16 @@ private extension SKToolbar {
     @objc func saveButtonPressed(_ sender: UIButton) {
         guard let browser = self.browser else { return }
         browser.delegate?.saveMedia?(browser)
+    }
+    
+    @objc func moveMediaPressed(_ sender: UIButton) {
+        guard let browser = self.browser else { return }
+        browser.delegate?.moveMedia?(browser)
+    }
+    
+    @objc func accessButtonPressed(_ sender: UIButton) {
+        guard let browser = self.browser else { return }
+        browser.delegate?.accessMedia?(browser)
     }
     
     private func barBattonItem(imageName: String, selector: Selector) -> UIBarButtonItem {
